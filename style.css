@@ -1,0 +1,72 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: "Logo";
+  src: url("fonts/chocotxt-webfont.woff2") format("woff2"),
+    url("fonts/chocotxt-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "form";
+  src: url("fonts/chocotxt-webfont.woff2") format("woff2"),
+    url("fonts/terminal-grotesque-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  display: flex;
+}
+
+#background {
+  background-image: url("background-img.jpg");
+  width: 40%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  position: relative;
+  background-position: center;
+  background-size: cover;
+}
+
+.logo {
+  padding: 15px 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  position: absolute;
+  top: 200px;
+}
+
+.logo h1 {
+  color: white;
+  font-size: 7rem;
+  font-family: "Logo", sans-serif;
+  letter-spacing: 10px;
+}
+
+.logo img {
+  width: 150px;
+}
+
+.source {
+  margin-bottom: 15px;
+  color: rgb(255, 255, 255);
+  background-color: rgba(0, 0, 0, 0.96);
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.source a:visited {
+  color: inherit;
+}

@@ -2,6 +2,8 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-size: 14px;
+  line-height: 1.5;
 }
 
 @font-face {
@@ -13,7 +15,7 @@
 }
 
 @font-face {
-  font-family: "form";
+  font-family: "form-label";
   src: url("fonts/chocotxt-webfont.woff2") format("woff2"),
     url("fonts/terminal-grotesque-webfont.woff") format("woff");
   font-weight: normal;
@@ -22,11 +24,13 @@
 
 body {
   display: flex;
+  font-family: "Roboto", sans-serif;
+  background-color: black;
 }
 
 #background {
   background-image: url("background-img.jpg");
-  width: 40%;
+  width: 40vw;
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -43,6 +47,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 10px;
   width: 100%;
   position: absolute;
   top: 200px;
@@ -69,4 +74,103 @@ body {
 
 .source a:visited {
   color: inherit;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 60vw;
+  background-color: rgb(0, 0, 0);
+  color: white;
+}
+
+.form-row {
+  padding-left: 50px;
+  padding-right: 200px;
+}
+
+.form-row p {
+  font-size: 1.7rem;
+  font-weight: bold;
+}
+
+p:last-child {
+  margin-top: 20px;
+  margin-bottom: 50px;
+}
+
+fieldset {
+  background-color: rgba(255, 255, 255, 0.9);
+  color: black;
+  padding: 20px 200px 20px 50px;
+  border: none;
+  width: 100%;
+  box-shadow: 0px 5px 13px rgb(200, 200, 200);
+}
+
+fieldset label,
+fieldset h1 {
+  display: flex;
+  flex-direction: column;
+  letter-spacing: 1.5px;
+}
+
+fieldset label {
+  margin-top: 20px;
+  font-family: "form-label", sans-serif;
+}
+
+fieldset > h1 {
+  font-weight: 700;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+fieldset > div.form-row {
+  padding: 0;
+  display: flex;
+  gap: 70px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="password"] {
+  border: 1px solid rgb(221, 221, 221);
+  border-radius: 3px;
+  width: 250px;
+  height: 30px;
+  margin-top: 3px;
+  padding: 0 7px;
+  font-size: 1.2rem;
+}
+
+input:valid {
+  border: 1px solid blue;
+}
+
+input[type="password"]:invalid {
+  border: 2px solid rgb(255, 0, 0);
+}
+
+input[type="password"]:invalid::after {
+  content: "* Password do not match";
+  color: rgb(0, 0, 0);
+}
+
+button {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-top: 20px;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.9);
+  color: rgb(0, 0, 0);
+  padding: 0.8rem 3rem;
+  border-radius: 5px;
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: rgb(197, 197, 197);
 }

@@ -137,7 +137,7 @@ input[type="text"],
 input[type="email"],
 input[type="tel"],
 input[type="password"] {
-  border: 1px solid rgb(221, 221, 221);
+  border: 2px solid rgb(146, 146, 146);
   border-radius: 3px;
   width: 250px;
   height: 30px;
@@ -146,8 +146,12 @@ input[type="password"] {
   font-size: 1.2rem;
 }
 
+div.form-row:nth-last-child(1) {
+  margin-bottom: 20px;
+}
+
 input:valid {
-  border: 1px solid blue;
+  /* border: 1px solid blue;s */
 }
 
 input[type="password"]:invalid {
@@ -156,7 +160,7 @@ input[type="password"]:invalid {
 
 input[type="password"]:invalid::after {
   content: "* Password do not match";
-  color: rgb(0, 0, 0);
+  color: rgb(255, 0, 0);
 }
 
 button {
@@ -173,4 +177,23 @@ button {
 button:hover {
   cursor: pointer;
   background-color: rgb(94, 94, 94);
+}
+
+button:active {
+  background-color: rgb(121, 121, 121);
+}
+
+input + span {
+  position: relative;
+}
+
+input + span::before {
+  position: absolute;
+  top: -1px;
+}
+
+input#password:invalid + span::before {
+  font-family: "Roboto", sans-serif;
+  content: "* passwords do not match";
+  color: red;
 }
